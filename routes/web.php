@@ -1,5 +1,6 @@
 <?php
-
+    use Illuminate\Support\Facades\Route;
+    use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,14 +12,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/dashboard', 'HomeController@index')->name('dashboard');
-Route::get('/dashboard/profile', 'UserController@index')->name('profile');
-Route::get('/dashboard/profile/edit', 'UserController@edit2')->name('profile.edit');
-Route::patch('/dashboard/profile/update', 'UserController@update')->name('profile.update');
-Route::delete('/dashboard/profile/delete', 'UserController@destroy')->name('profile.delete');
+// Route::get('/dashboard', 'HomeController@index')->name('dashboard');
+// Route::get('/dashboard/profile', 'UserController@index')->name('profile');
+// Route::get('/dashboard/profile/edit', 'UserController@edit2')->name('profile.edit');
+// Route::patch('/dashboard/profile/update', 'UserController@update')->name('profile.update');
+// Route::delete('/dashboard/profile/delete', 'UserController@destroy')->name('profile.delete');
+Route::get('/{path?}', 'HomeController@root');
